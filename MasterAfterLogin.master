@@ -1,0 +1,240 @@
+﻿<%@ Master Language="C#" Debug="true" AutoEventWireup="true" CodeFile="MasterAfterLogin.master.cs"
+    Inherits="MasterAfterLogin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>LRMS Master After Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        body
+        {
+            padding: 0;
+            margin: 0;
+            font-family: Times New Roman;
+            background:#FEF8ED;
+        }
+        .label_color
+        {
+           color:white;
+        }
+        h5
+        {
+            font-family: Trebuchet MS;
+            font-weight: normal;
+            color: midnightblue;
+             
+        }
+        
+        @media print
+        {
+            .noprint
+            {
+                display: none;
+            }
+        }
+        a.navbar-brand:hover
+        {
+            background-color: #fff;
+        }
+        .nav-bg-color
+        {
+          /*  background-color: #6D5F16;*/
+          background-color: #5D793E;
+        }
+        
+        .navbar-bar-color
+        {
+           /* background-color: #6D5F16;*/
+           background-color: #5D793E;
+        }
+        
+        .navbar-bar-color-ch
+        {
+            /*background-color: #6D5F16;*/
+            background-color: #5D793E;
+        }
+        
+        a:hover
+        {
+            background-color: #F8C471;
+        }
+        a.dropdown-item.nav-bg-color:hover
+        {
+            background-color: #F8C471;
+        }
+        span.navbar-toggler-icon
+        {
+            color: #fff;
+        }
+        .wide-child
+        {
+            padding: 0px;
+            margin-left: -1px;
+            margin-right: -4px;
+        }
+        .bigFont li
+        {
+            font-size: 13px;
+        }
+        .topnav-right
+        {
+            float: right;
+        }
+    </style>
+    <script type="text/javascript">
+
+        function preventBack() {
+            window.history.forward();
+        }
+        var path = (window.location.pathname).split("/")[1];
+        if (path == "LandingPage.aspx") {
+            setTimeout("preventBack()", 0);
+            window.onunload = function () { null };
+        } else if (path == "LandingPageAdmin.aspx") {
+            setTimeout("preventBack()", 0);
+            window.onunload = function () { null };
+        }
+        else if (path == "LandingPageDow.aspx") {
+            setTimeout("preventBack()", 0);
+            window.onunload = function () { null };
+        }
+         else {
+           
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form_master_after_login_user" runat="server">
+    <nav class="navbar navbar-expand-xl navbar-light navbar-bar-color-ch wide-child"
+        style="height: auto">
+        <div class="container col-md-12 flex-row">
+            <div class="justify-content-start">
+                <asp:Image ID="Image2" runat="server" ImageUrl="~/image/icar-logo-white.png" Height="50px"
+                    Width="50px"></asp:Image>
+            </div>
+            <div class="d-flex justify-content-center row" style="color: White; font-size: x-large;">
+              ICAR-Land Record Management System
+            </div>
+            <div class="justify-content-end float-right">
+                <asp:Image ID="Image3" runat="server" ImageUrl="~/images/ivriwhite.png" Height="50px"
+                    Width="50px" CssClass="mr-0 pr-0" Visible="false"></asp:Image>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-xl navbar-light nav-bg-color">
+        <div class="container-fluid">
+            <div class="navbar-brand">
+                <%--   <asp:Image ID="Image1" Height="50px" Width="50px" runat="server" ImageUrl=""
+                                    Style="display: inline-block;" />--%>
+                <span style="display: inline-block; color: white"></span>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <div style="color: white; font-size: smaller">
+                    Menu</div>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-0 mr-auto">
+                    <li class="nav-item"></li>
+                </ul>
+                <ul class="navbar-nav ml-1">
+                 <% if (users.usertype == "1")
+                    {%>
+                 <li class="nav-item active"><a class="nav-link" href="LandingPage.aspx" style="color: White">
+                        <i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="ProformaofLandRecord.aspx" style="color: White">
+                        <i class="fa fa" aria-hidden="true"></i> Performa Land Record</a></li>
+                        
+                    <li class="nav-item active"><a class="nav-link" href="ViewLandReport.aspx" style="color: White">
+                        <i class="fa fa" aria-hidden="true"></i> Report</a></li>
+                         <li class="nav-item active"><a class="nav-link" href="#" data-toggle="modal"
+                        data-target=".bd-aboutus-modal-xl" style="color: White">
+                        <i class="fa fa" aria-hidden="true"></i> User Manual</a></li>
+                        <%}
+                    else if(users.usertype=="2")
+                    { %>
+                          <li class="nav-item active"><a class="nav-link" href="LandingPageAdmin.aspx" style="color: White">
+                        <i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                         <li class="nav-item active"><a class="nav-link" href="AddUser.aspx" style="color: White">
+                        <i class="fa fa" aria-hidden="true"></i> Add User</a></li>
+                          <li class="nav-item active"><a class="nav-link" href="#" style="color: White">
+                        <i class="fa fa" aria-hidden="true"></i> Report</a></li>
+                        <%}
+                    else if (users.usertype == "3")
+                    {%>
+                     <li class="nav-item active"><a class="nav-link" href="LandingPageDow.aspx" style="color: White">
+                        <i class="fa fa-home" aria-hidden="true"></i> Home</a></li>                        
+                          <li class="nav-item active"><a class="nav-link" href="ViewReportDow.aspx" style="color: White">
+                        <i class="fa fa" aria-hidden="true"></i> Report</a></li>
+                        <%} %>
+                         <li class="nav-item active"><a class="nav-link" href="ChangePassword.aspx" style="color: White">
+                        <i class="fa fa" aria-hidden="true"></i> Change Password</a></li>
+                       
+                       
+                </ul>
+                <br />
+                <div id="divusername" runat="server" style="visibility: visible" class="navbar-nav ml-auto mr-2">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item" style="color: White"><i class="fa fa-user-circle" aria-hidden="true">
+                        </i>
+                            <asp:Label ID="lblusername" runat="server" Text="" ForeColor="White"></asp:Label>
+                        </li>
+                    </ul>
+                </div>
+                <br />
+                <ul class="navbar-nav mr-0 bigFont topnav-right">
+                    <li class="nav-item">
+                        <asp:LinkButton ID="lblogout" CssClass="btn btn-danger btn-sm" style="font-size:medium;" runat="server" OnClick="lblogout_OnClick"
+                            ValidationGroup="0"><b>Logout</b></asp:LinkButton>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+      <!--User manual -->
+         <div class="modal fade bd-aboutus-modal-xl" id="exampleModalAboutUs" tabindex="-1"
+            role="dialog" aria-labelledby="ModalAboutUsLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                <div class="modal-content bg-light text-dark">
+                    <div class="modal-header bg-success text-white">
+                        <h5 class="modal-title" id="ModalAboutUsLabel">
+                            User Manual</h5>
+                        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="height: 500px">                        
+                        <div class="container-fluid">
+                            <div class="col-md-12 row">
+                            <%--<iframe src="/files/Admin_User_Manual_LRMS.pdf&embedded=true"></iframe>--%>
+                           <%-- <a href="files/Admin_User_Manual_LRMS.docx" target="_self">View File</a>--%>
+                              <embed src="files/Admin_User_Manual_LRMS.pdf" type="application/pdf" class="overflow-auto" style="width:1250px;height: 500px">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <asp:Button ID="ButtonCloseAU" runat="server" Text="Close" data-dismiss="modal" CssClass="btn btn-secondary" />
+                        <%--  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>--%>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end of User manual -->
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+
+
+</body>
+</html>

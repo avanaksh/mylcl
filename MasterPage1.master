@@ -1,0 +1,235 @@
+﻿<%@ Master Language="C#" Debug="true" CodeFile="MasterPage1.master.cs" Inherits="MasterPage1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>LRMS-ICAR-IASRI</title>
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+   
+
+    
+   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <style type="text/css">
+        body
+        {
+           padding: 0;
+            margin: 0;
+            font-family: Times New Roman;
+            font-size:small;
+            background:#FEF8ED;
+        }
+        
+        .nav_size_font
+        {
+             font-family: Times New Roman;
+            font-size:medium;
+        }
+        
+      /*  a.btn:hover
+        {
+            background-color:Red;
+        }
+        */
+        
+     
+        
+        .navbar-bar-color
+        {/*#217BFC  #2DA749 #36CD58 #93BF69*/
+            background-color: #5D793E;
+        }
+        a.nav-item.active
+        {
+            background-color: #F8C471;
+        }
+        a.nav-link:hover
+        {
+            background-color: #F8C471;
+        }
+        .text-color-all
+        {
+            color: White;
+        }
+    
+        .wide-child
+        {
+            padding: 0px;
+            margin-left: -1px;
+            margin-right: -4px;
+        }
+    </style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+      <nav class="navbar navbar-expand-xl navbar-light navbar-bar-color wide-child" style="height:70px">
+        <div class="container col-md-12 flex-row">
+            <div class="d-flex justify-content-start">
+            <!--~/images/naheptrans.png-->
+                <asp:Image ID="Image3" runat="server" ImageUrl="https://education.icar.gov.in/public/images/icar-logo-white.png" Height="50px"
+                    Width="50px" Visible="true"></asp:Image>
+            </div>
+            <div class="d-flex justify-content-center row" style="color: White; font-size: x-large;">
+              ICAR-Land Record Management System</div>
+            <div class="d-flex justify-content-end float-right">
+                <asp:Image ID="Image4" runat="server" ImageUrl="~/images/ivriwhite.png" Height="50px"
+                    Width="50px" CssClass="mr-0 pr-0" Visible="false"></asp:Image>                   
+            </div>
+        </div>
+    </nav>
+     <nav class="navbar navbar-expand-xl navbar-light navbar-bar-color mt-0 wide-child">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <div style="color: White; font-size: smaller">
+                    Menu</div>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+            </ul>
+                <ul class="navbar-nav ml-5">
+                 <%-- <li class="nav-item active"><a class="nav-link nav_size_font" href="#" style="color: White" data-toggle="modal"
+                        data-target=".bd-home-modal-xl">Home <span class="sr-only">(current)</span></a>
+                    </li>--%>
+                      <li class="nav-item"><a class="nav-link nav_size_font" href="#" style="color: White" data-toggle="modal"
+                        data-target=".bd-aboutus-modal-xl">User Manual <span class="sr-only">(current)</span></a>
+                    </li>
+                   <%-- <li class="nav-item"><a class="nav-link" href="#" style="color: White" data-toggle="modal"
+                        data-target=".bd-contactus-modal-xl">Contact Us <span class="sr-only">(current)</span></a>
+                    </li>--%>
+                </ul>
+                <%-- <ul class="navbar-nav">
+                    <li class="nav-item ml-1">
+                        <asp:LinkButton ID="LinkButton1" runat="server" Style="color: White" CssClass="btn btn-outline-danger btn-sm"
+                          >SignIn<span class="sr-only">(current)</asp:LinkButton>
+                    </li>
+                </ul> --%>
+                  <ul class="navbar-nav mr-auto">
+            </ul>
+            </div>
+        </div>
+    </nav>
+     <!--Home -->
+        <div class="modal fade bd-home-modal-xl" id="exampleModalHome" tabindex="-1" role="dialog"
+            aria-labelledby="ModalHomeLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                <div class="modal-content bg-light text-dark">
+                    <div class="modal-header bg-success text-white">
+                        <h5 class="modal-title " id="ModalHomeLabel">
+                            Home</h5>
+                        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body overflow-auto" style="height: auto">
+                       
+                        <div class="container-fluid nav_size_font">
+                            <div class="col-md-12 row">
+                                <p class="text-justify">
+                                  Land Record Management System contains the details regarding the ownership, land holding, expiry of lease and other related details of institutes and their regional stations of ICAR. 
+                                </p>     
+                                <p class="text-justify">
+                                There are few Institutes where renewal lease of land and other ownership issues are pending for so long. Similarly, no information has been available for the Institutes where lease ownership is going to expire in next two-three years.  
+                                </p>      
+                                <p class="text-justify">
+                                ICAR had previously collected some information about land area holding and ownership details.  This information has been stored in the backend database of this system. 
+                                </p>     
+                                <p class="text-justify">
+                                This user-friendly system would help in entering information about lease period details of the land records.  This would also save time and energy unnecessarily required for collection of data repeatedly and also help in better management of land record in future.  
+                               </p>    
+                               <p class="text-justify">
+                               With growing pressure on land, it is becoming a scarce resource and the demand for land is increasing from State Governments also.  The information obtained from this software can be readily used for deciding the future policies for land management by ICAR.  
+                               </p>    
+                               <p class="text-justify">
+                               This software would also generate advisory about expiry of lease where lease would expire within one year. 
+                               </p>   
+                               <p class="text-justify">
+                               Similarly, advisory would be generated for updating the status of dispute/ court cases on quarterly period. This software also sends the advisories to the Director of the institute, Administrate Head (Head of Office) and Director (Works) by email.
+                                </p>   
+                                <p class="text-justify">
+                                This software has been developed by IT Unit of ICAR-IASRI in collaboration with ICT Section of ICAR.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <asp:Button ID="ButtonHome" runat="server" Text="Close" data-dismiss="modal" CssClass="btn btn-secondary" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end of Home -->
+        <!--User manual -->
+         <div class="modal fade bd-aboutus-modal-xl" id="exampleModalAboutUs" tabindex="-1"
+            role="dialog" aria-labelledby="ModalAboutUsLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                <div class="modal-content bg-light text-dark">
+                    <div class="modal-header bg-success text-white">
+                        <h5 class="modal-title" id="ModalAboutUsLabel">
+                            User Manual</h5>
+                        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="height: 500px">                        
+                        <div class="container-fluid">
+                            <div class="col-md-12 row">
+                            <%--<iframe src="https://docs.google.com/gview?url=http://localhost:56389/LRMS/files/Admin_User_Manual_LRMS.pdf&embedded=true"></iframe>--%>
+                           <%-- <a href="files/Admin_User_Manual_LRMS.docx" target="_self">View File</a>--%>
+                              <embed src="files/Admin_User_Manual_LRMS.pdf" type="application/pdf" class="overflow-auto" style="width:1250px;height: 500px">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <asp:Button ID="ButtonCloseAU" runat="server" Text="Close" data-dismiss="modal" CssClass="btn btn-secondary" />
+                        <%--  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>--%>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end of User manual -->
+    <div >
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+      <nav class="navbar  navbar-expand-xl navbar-light navbar-bar-color mt-2 wide-child"
+        style="height: auto;" >
+        <div class="container col-md-12 flex-row">
+            <div class="d-flex justify-content-start">
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/image/iasriwhite.png"
+                    Height="50px" Width="50px"></asp:Image>
+            </div>
+            <div class="container">
+            <div class="col-md-12 flex-column text-center">
+            <div class="d-flex align-items-center text-white flex-column">
+          <div></div>
+          <div class="nav_size_font">Developed by</div>
+          <div class="nav_size_font">IT Unit</div>
+           <div class="nav_size_font">ICAR-IASRI Library Avenue, Pusa, New Delhi 110012</div>
+           </div>
+           </div>
+        </div>
+         
+            <div class="d-flex justify-content-end float-right">
+                <asp:Image ID="Image5" runat="server" ImageUrl="https://education.icar.gov.in/public/images/icar-logo-white.png" Height="50px"
+                    Width="50px" Visible="false"></asp:Image>
+            </div>
+
+
+             
+        </div>
+    </nav>
+    </form>
+
+</body>
+</html>

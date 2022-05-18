@@ -1,0 +1,161 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body 
+{
+    padding:0;
+    margin:0;
+   /* font-family:Sans-Serif;*/
+   font-family:'Open Sans', sans-serif;
+    background:#ccc;
+}
+.container
+{
+    position:relative;
+    width:80%;
+    margin:0 auto;
+    background:#fff;
+    padding:20px;
+    box-sizing:border-box;
+    min-height:400px;
+}
+.full-width
+{
+    width:100%;  
+   /*  display:inline-block; */
+}
+.lb
+{
+   background:#07575B;
+     /*color:#fff;
+    display:block;*/
+    padding:10px 15px;
+    color:#fff;
+    text-decoration:none;
+}
+.lb:hover
+{
+     background:#6fb98f;
+}
+nav
+{
+    width:100%;
+    margin-bottom:20px;
+}
+nav ul
+{
+    margin:20px 0 0;
+    padding:0;
+    border-radius:4px;
+    background:#07575B;
+    overflow:hidden;
+}
+nav ul li
+{
+    list-style:none;
+    display:inline-block;
+}
+nav ul li a
+{
+    display:block;
+    padding:15px 20px;
+    color:#fff;
+    text-decoration:none;
+}
+.active,
+nav ul li a:hover
+{
+    background:#6fb98f;
+}
+.col-7
+{
+    width:70%;
+    min-height:400px;
+    background:#ccc;
+    float:left;
+}
+.col-3
+{
+    width:28%;
+    min-height:400px;
+    background:#a5dbbc;
+    float:right;
+    box-sizing:border-box;
+    padding:20px;
+}
+.margin-top20px
+{
+    margin-top:20px;
+}
+.post
+{
+    background:#ccc;
+    padding:20px;
+    background:#f1f1f1;
+}
+img
+{
+    max-width:100%;
+    border:4px;
+    border-radius:4px
+}
+h1
+{
+    margin:10px 0;
+}
+.col-3 ul
+{
+    margin:0;
+    padding:0;
+}
+.col-3 ul li
+{
+    list-style:none;
+    padding:8px;
+    border-bottom:1px solid rgba(0,0,0,.1);
+}
+.col-3 ul li:hover
+{
+    background:#07575B;
+    color:#fff;
+}
+.footer-text
+{
+    padding-top:20px;
+    text-align:center;
+    font-weight:bold;
+   /* display:inline-block;*/
+}
+@media(max-width:900px)
+{
+    .container
+    {
+        width:100%;
+    }
+  /*  .full-width
+    {
+         display:block;
+           text-align:center;
+    }*/
+    nav ul li
+    {     
+        display:block;
+        text-align:center;
+    }
+    .col-7,
+    .col-3
+    {
+        width:100%;
+        float:none;
+    }
+    .col-3
+    {
+        margin-top:20px;
+    }
+ 
+  /*  .footer-text
+    {
+          display:block;
+          text-align:center;
+    }*/
+}
+
+
